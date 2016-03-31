@@ -1,0 +1,24 @@
+{
+	"name": "Gmail Spammers",
+	"version": "0.1",
+	"author": "Jardel Weyrich",
+	"description": "Gathers all email addresses from your Gmail Spam folder and present them as a clean list in a popup window.",
+	"manifest_version": 2,
+	"permissions": [
+		"https://mail.google.com/mail/u/*"
+	],
+	"content_scripts": [
+		{
+			"all_frames": true,
+			"matches": [ "https://mail.google.com/mail/u/*" ],
+			"js": [ "jquery-2.2.2.min.js", "extension.js" ],
+			"run_at": "document_end"
+		}
+	],
+	"web_accessible_resources": [
+		"jquery-2.2.2.min.js",
+		"detector.js",
+		"popup.html",
+		"popup.js"
+	]
+}
